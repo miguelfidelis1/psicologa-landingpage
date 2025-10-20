@@ -1,0 +1,1731 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Helena Moreira - Psicóloga Clínica</title>
+    
+    <meta name="description" content="Psicóloga especializada em oferecer suporte emocional para uma vida mais equilibrada. Encontre acolhimento e profissionalismo.">
+    <meta name="keywords" content="psicóloga, terapia, saúde mental, ansiedade, depressão, acolhimento">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        
+        :root {
+            
+            --color-bg: #fdfaf6;          
+            --color-white: #ffffff;
+            --color-text: #4a4a4a;        
+            --color-text-light: #7a7a7a;
+            --color-primary: #8FA998;     
+            --color-secondary: #B2C8D3;   
+            --color-accent: #D4B996;      
+            --color-border: #e0e0e0;
+
+            
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+
+            
+            --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-title);
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--color-text-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-primary);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-accent);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+        
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            color: var(--color-white);
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            box-shadow: 0 4px 15px rgba(143, 169, 152, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(143, 169, 152, 0.6);
+        }
+
+        .btn-secondary {
+            color: var(--color-primary);
+            background-color: var(--color-white);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+        
+        .logo span {
+            font-size: 1rem;
+            font-family: var(--font-body);
+            color: var(--color-text-light);
+            display: block;
+            line-height: 1;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--color-text);
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+        
+        .header .btn {
+            padding: 8px 20px;
+            margin-left: 30px;
+        }
+
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .menu-toggle .icon-bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--color-primary);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        
+        #hero {
+            padding-top: 150px; 
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--color-bg);
+            text-align: center;
+        }
+
+        #hero .container {
+            max-width: 800px;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-light);
+            margin-bottom: 40px;
+        }
+
+        
+        #sobre {
+            background-color: var(--color-white);
+        }
+
+        #sobre .container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .sobre-img {
+            flex-basis: 40%;
+            text-align: center;
+        }
+
+        .sobre-img img {
+            max-width: 350px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            border: 8px solid var(--color-white);
+            outline: 1px solid var(--color-border);
+        }
+
+        .sobre-content {
+            flex-basis: 60%;
+        }
+
+        .sobre-content h2 {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .sobre-content h3 {
+            font-family: var(--font-body);
+            font-size: 1.3rem;
+            color: var(--color-text);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .trust-indicators {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .indicator {
+            background-color: var(--color-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid var(--color-border);
+        }
+        
+        .indicator span {
+            display: block;
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 1.2rem;
+        }
+        
+        .indicator p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--color-text-light);
+        }
+
+        
+        #estatisticas {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .stat-item h4 {
+            font-size: 3rem;
+            font-family: var(--font-body);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            color: var(--color-white);
+            opacity: 0.9;
+            margin-bottom: 0;
+            font-weight: 300;
+        }
+
+        
+        .especialidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .especialidade-card {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            padding: 30px;
+            text-align: center;
+            border: 1px solid var(--color-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .especialidade-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .especialidade-card .icon-svg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+        }
+
+        .especialidade-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--color-text);
+        }
+
+        
+        #beneficios {
+            background-color: var(--color-white);
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px 40px;
+            margin-top: 40px;
+        }
+
+        .beneficio-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .beneficio-item .icon-svg {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            color: var(--color-accent);
+            margin-top: 5px;
+        }
+
+        .beneficio-item h3 {
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--color-text);
+            margin-bottom: 5px;
+        }
+        
+        .beneficio-item p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        
+        .processo-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        
+        
+        .processo-timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--color-secondary);
+            opacity: 0.3;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .processo-step {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        
+        .processo-step::after {
+            content: attr(data-step);
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            right: -25px;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: 4px solid var(--color-bg);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        .processo-step.left {
+            left: 0;
+            text-align: right;
+        }
+        
+        .processo-step.left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--color-white);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--color-white);
+        }
+
+        
+        .processo-step.right {
+            left: 50%;
+        }
+
+        .processo-step.right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--color-white);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--color-white) transparent transparent;
+        }
+
+        .processo-step.right::after {
+            left: -25px;
+        }
+
+        .processo-content {
+            padding: 20px 30px;
+            background-color: var(--color-white);
+            position: relative;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .processo-content h3 {
+            color: var(--color-primary);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .processo-content p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        
+        #depoimentos {
+            background-color: var(--color-white);
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 40px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            display: none; 
+        }
+        
+        .testimonial-slide.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--color-text);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-quote::before,
+        .testimonial-quote::after {
+            content: '"';
+            font-family: var(--font-title);
+            font-size: 4rem;
+            color: var(--color-secondary);
+            opacity: 0.5;
+            position: absolute;
+        }
+        
+        .testimonial-quote::before {
+            top: -10px;
+            left: -10px;
+        }
+        
+        .testimonial-quote::after {
+            bottom: -30px;
+            right: -10px;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-top: 30px;
+        }
+        
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+        
+        .carousel-control.prev { left: 0; }
+        .carousel-control.next { right: 0; }
+        
+        .carousel-control svg {
+            width: 30px;
+            height: 30px;
+            color: var(--color-secondary);
+            transition: color 0.3s ease;
+        }
+        
+        .carousel-control:hover svg {
+            color: var(--color-primary);
+        }
+
+        .carousel-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--color-border);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--color-primary);
+        }
+
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        
+        .faq-item {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 30px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--color-text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            color: var(--color-primary);
+        }
+        
+        .faq-icon {
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-answer p {
+            padding: 0 30px 20px 30px;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        
+        #contato {
+            background-color: var(--color-bg);
+            padding-bottom: 0; 
+        }
+
+        .contato-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background-color: var(--color-white);
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+        }
+        
+        .contato-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background-color: var(--color-bg);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 5px rgba(143, 169, 152, 0.5);
+        }
+        
+        .form-group .error-message {
+            color: #d9534f;
+            font-size: 0.85rem;
+            display: none;
+            margin-top: 5px;
+        }
+        
+        .form-group.error input,
+        .form-group.error textarea {
+            border-color: #d9534f;
+        }
+        
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        .mapa-container {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+        }
+        
+        .mapa-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: var(--border-radius);
+        }
+
+        
+        .footer {
+            background-color: #333;
+            color: var(--color-border);
+            padding: 80px 0 30px;
+            margin-top: -1px; 
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h4 {
+            font-family: var(--font-body);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-col p, .footer-col li {
+            font-size: 0.95rem;
+            color: var(--color-border);
+            margin-bottom: 10px;
+        }
+        
+        .footer-col .logo {
+            color: var(--color-white);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul a {
+            color: var(--color-border);
+        }
+        
+        .footer-col ul a:hover {
+            color: var(--color-white);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            color: var(--color-border);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .newsletter-form {
+            display: flex;
+        }
+        
+        .newsletter-form input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            font-family: var(--font-body);
+            background-color: #555;
+            color: var(--color-white);
+        }
+        
+        .newsletter-form button {
+            padding: 10px 15px;
+            border: none;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            cursor: pointer;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            font-weight: 700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #555;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+            color: var(--color-text-light);
+        }
+
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background-color: var(--color-white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            max-width: 450px;
+            position: relative;
+            transform: translateY(-50px);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-content .icon-svg {
+            width: 80px;
+            height: 80px;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+        
+        .modal-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .modal-content p {
+            margin-bottom: 30px;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--color-text-light);
+        }
+
+        
+
+        
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 71px; 
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                flex-direction: column;
+                background-color: var(--color-white);
+                padding: 30px;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: right 0.4s ease-in-out;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .nav-menu a {
+                font-size: 1.2rem;
+            }
+            
+            .header .btn {
+                display: none; 
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu-toggle.active .icon-bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .menu-toggle.active .icon-bar:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active .icon-bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            #sobre .container {
+                flex-direction: column;
+            }
+            
+            .sobre-content h2 {
+                text-align: center;
+            }
+            
+            .contato-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        
+        @media (max-width: 768px) {
+            h2 { font-size: 2rem; }
+            section { padding: 60px 0; }
+            
+            #hero { min-height: 70vh; padding-top: 120px; }
+            #hero h1 { font-size: 2.5rem; }
+            #hero p { font-size: 1.1rem; }
+            
+            .beneficios-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            
+            .processo-timeline::after {
+                left: 31px;
+            }
+            
+            .processo-step {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 15px;
+            }
+            
+            .processo-step.left,
+            .processo-step.right {
+                left: 0;
+                text-align: left;
+            }
+            
+            .processo-step.left::after,
+            .processo-step.right::after {
+                left: 6px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .processo-step.left::before,
+            .processo-step.right::before {
+                left: 60px;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--color-white) transparent transparent;
+            }
+            
+            .contato-wrapper {
+                padding: 30px 20px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#hero" class="logo smooth-scroll">
+                Dra. Helena Moreira
+                <span>Psicóloga Clínica</span>
+            </a>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#sobre" class="smooth-scroll">Sobre mim</a></li>
+                    <li><a href="#especialidades" class="smooth-scroll">Especialidades</a></li>
+                    <li><a href="#como-funciona" class="smooth-scroll">Como Funciona</a></li>
+                    <li><a href="#faq" class="smooth-scroll">FAQ</a></li>
+                    <li><a href="#contato" class="smooth-scroll btn btn-secondary">Agendar</a></li>
+                </ul>
+            </nav>
+            
+            <a href="#contato" class="btn btn-primary smooth-scroll cta-desktop">Agendar Consulta</a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="hero">
+            <div class="container">
+                <h1>Cuidando da Sua Saúde Mental com Profissionalismo e Acolhimento</h1>
+                <p>Psicóloga especializada em oferecer suporte emocional para uma vida mais equilibrada, com empatia e total confidencialidade.</p>
+                <a href="#contato" class="btn btn-primary btn-lg smooth-scroll">Quero Agendar Minha Consulta</a>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <div class="sobre-img">
+                    <img src="https://via.placeholder.com/350x400.png?text=Foto+Profissional" alt="Foto da Dra. Helena Moreira, Psicóloga">
+                </div>
+                <div class="sobre-content">
+                    <h2>Olá, eu sou a Dra. Helena Moreira</h2>
+                    <h3>Sua parceira na jornada pelo autoconhecimento e bem-estar.</h3>
+                    <p>Eu acredito que cada indivíduo possui a capacidade de transformar sua vida, e meu papel é ser uma facilitadora nesse processo. Com uma abordagem humanizada e baseada em evidências, meu consultório é um espaço seguro e livre de julgamentos.</p>
+                    <p>Minha missão é ajudar você a navegar pelos desafios da vida, sejam eles ansiedade, estresse, questões de relacionamento ou a busca por um propósito maior. Vamos juntos construir um caminho de saúde emocional e equilíbrio.</p>
+                    
+                    <div class="trust-indicators">
+                        <div class="indicator">
+                            <span>CRP 00/12345</span>
+                            <p>Registro Ativo</p>
+                        </div>
+                        <div class="indicator">
+                            <span>+10 Anos</span>
+                            <p>De Experiência</p>
+                        </div>
+                        <div class="indicator">
+                            <span>Total Sigilo</span>
+                            <p>Ambiente Seguro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="estatisticas">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h4 data-count="1200">0</h4>
+                        <p>Pacientes Atendidos</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4 data-count="8000">0</h4>
+                        <p>Sessões Realizadas</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4 data-count="10">0</h4>
+                        <p>Anos de Experiência</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4 data-count="5">0</h4>
+                        <p>Certificações</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="especialidades">
+            <div class="container">
+                <h2>Áreas de Atuação</h2>
+                <div class="especialidades-grid">
+                    <div class="especialidade-card">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.17 48.17 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                        </svg>
+                        <h3>Transtornos de Ansiedade</h3>
+                        <p>Manejo de pânico, ansiedade generalizada (TAG), fobias e estresse.</p>
+                    </div>
+                    <div class="especialidade-card">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                        <h3>Terapia de Casal</h3>
+                        <p>Melhoria na comunicação, resolução de conflitos e fortalecimento do relacionamento.</p>
+                    </div>
+                    <div class="especialidade-card">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                        <h3>Autoconhecimento</h3>
+                        <p>Jornada para entender suas emoções, padrões e potencializar seu crescimento pessoal.</p>
+                    </div>
+                    <div class="especialidade-card">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75v6.75m0 0l-3-3m3 3l3-3m-8.25 6a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                        </svg>
+                        <h3>Depressão e Luto</h3>
+                        <p>Acolhimento e ferramentas para lidar com a tristeza, perda e processos de luto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="beneficios">
+            <div class="container">
+                <h2>O que a Terapia Pode Fazer por Você?</h2>
+                <div class="beneficios-grid">
+                    <svg id="svg-check" style="display: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+
+                    <div class="beneficio-item">
+                        <svg class="icon-svg"><use href="#svg-check"></use></svg>
+                        <div>
+                            <h3>Inteligência Emocional</h3>
+                            <p>Aprenda a reconhecer, entender e gerenciar suas próprias emoções de forma saudável.</p>
+                        </div>
+                    </div>
+                    <div class="beneficio-item">
+                        <svg class="icon-svg"><use href="#svg-check"></use></svg>
+                        <div>
+                            <h3>Relacionamentos Saudáveis</h3>
+                            <p>Melhore sua comunicação e estabeleça limites, construindo laços mais fortes e positivos.</p>
+                        </div>
+                    </div>
+                    <div class="beneficio-item">
+                        <svg class="icon-svg"><use href="#svg-check"></use></svg>
+                        <div>
+                            <h3>Redução de Estresse</h3>
+                            <p>Desenvolva estratégias de enfrentamento (coping) para lidar com as pressões do dia a dia.</p>
+                        </div>
+                    </div>
+                    <div class="beneficio-item">
+                        <svg class="icon-svg"><use href="#svg-check"></use></svg>
+                        <div>
+                            <h3>Resolução de Traumas</h3>
+                            <p>Ressignifique eventos passados em um ambiente seguro e profissional.</p>
+                        </div>
+                    </div>
+                    <div class="beneficio-item">
+                        <svg class="icon-svg"><use href="#svg-check"></use></svg>
+                        <div>
+                            <h3>Autoconfiança e Autoestima</h3>
+                            <p>Fortaleça a visão que você tem de si mesmo e sinta-se mais seguro em suas decisões.</p>
+                        </div>
+                    </div>
+                    <div class="beneficio-item">
+                        <svg class="icon-svg"><use href="#svg-check"></use></svg>
+                        <div>
+                            <h3>Foco e Clareza Mental</h3>
+                            <p>Organize seus pensamentos e defina prioridades para alcançar seus objetivos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona">
+            <div class="container">
+                <h2>O Processo Terapêutico</h2>
+                <div class="processo-timeline">
+                    <div class="processo-step left" data-step="1">
+                        <div class="processo-content">
+                            <h3>Primeiro Contato</h3>
+                            <p>Você entra em contato pelo site ou WhatsApp. Agendamos uma breve conversa inicial (sem custo) para nos conhecermos.</p>
+                        </div>
+                    </div>
+                    <div class="processo-step right" data-step="2">
+                        <div class="processo-content">
+                            <h3>Sessão de Anamnese</h3>
+                            <p>Nossa primeira sessão oficial. Vamos entender suas demandas, histórico e definir juntos os objetivos da terapia.</p>
+                        </div>
+                    </div>
+                    <div class="processo-step left" data-step="3">
+                        <div class="processo-content">
+                            <h3>Sessões Semanais</h3>
+                            <p>Encontros regulares (geralmente de 50 minutos) focados em suas metas, utilizando abordagens personalizadas.</p>
+                        </div>
+                    </div>
+                    <div class="processo-step right" data-step="4">
+                        <div class="processo-content">
+                            <h3>Acompanhamento e Alta</h3>
+                            <p>A medida que você se fortalece, as sessões podem ser espaçadas. A alta ocorre em comum acordo, quando você se sentir seguro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos">
+            <div class="container">
+                <h2>O que dizem os pacientes</h2>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="testimonial-slide active">
+                            <p class="testimonial-quote">A Dra. Helena mudou minha perspectiva de vida. Encontrei nela uma profissionalismo e um acolhimento que nunca tinha visto. Sou muito grata.</p>
+                            <p class="testimonial-author">- M. A., 34 anos</p>
+                        </div>
+                        <div class="testimonial-slide">
+                            <p class="testimonial-quote">Iniciei a terapia de casal com muito receio, mas a condução da Dra. Helena foi essencial para que eu e meu parceiro voltássemos a nos entender.</p>
+                            <p class="testimonial-author">- R. S. e J. P., 42 e 45 anos</p>
+                        </div>
+                        <div class="testimonial-slide">
+                            <p class="testimonial-quote">Consegui finalmente entender e gerenciar minha ansiedade. As ferramentas que aprendi na terapia uso todos os dias. Recomendo de olhos fechados.</p>
+                            <p class="testimonial-author">- F. L., 28 anos</p>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-control prev" aria-label="Depoimento Anterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                    </button>
+                    <button class="carousel-control next" aria-label="Próximo Depoimento">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                    </button>
+                </div>
+                
+                <div class="carousel-dots">
+                    </div>
+            </div>
+        </section>
+        
+        <section id="faq">
+            <div class="container">
+                <h2>Perguntas Frequentes</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Qual a diferença entre psicólogo e psiquiatra?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O psicólogo foca na psicoterapia (terapia pela fala) para tratar questões emocionais e comportamentais. O psiquiatra é um médico que diagnostica transtornos mentais e pode prescrever medicação. Muitas vezes, o trabalho dos dois é complementar.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Quanto tempo dura uma sessão de terapia?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>As sessões individuais têm duração padrão de 50 minutos e geralmente ocorrem uma vez por semana. A frequência e duração total do tratamento variam conforme a necessidade de cada paciente.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Tudo que eu disser é confidencial?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim. O sigilo profissional é um pilar fundamental da psicologia, garantido pelo Código de Ética do Psicólogo. Tudo o que é discutido em sessão é estritamente confidencial.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Como funciona o atendimento online?
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O atendimento online (teleterapia) é realizado por videochamada em uma plataforma segura (como Google Meet ou Zoom). Possui a mesma eficácia e rigor ético do atendimento presencial, oferecendo mais flexibilidade e conforto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <div class="contato-wrapper">
+                    <div class="contato-form">
+                        <h3>Agende sua consulta</h3>
+                        <p>Preencha o formulário abaixo e minha equipe entrará em contato para confirmar o melhor horário para você.</p>
+                        
+                        <form id="booking-form" novalidate>
+                            <div class="form-group">
+                                <label for="name">Nome Completo</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message">Por favor, insira seu nome.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message">Por favor, insira um e-mail válido.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone / WhatsApp</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <span class="error-message">Por favor, insira seu telefone.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferência de Horário</label>
+                                <select id="time" name="time">
+                                    <option value="">Selecione um período</option>
+                                    <option value="manha">Manhã (08h - 12h)</option>
+                                    <option value="tarde">Tarde (13h - 18h)</option>
+                                    <option value="noite">Noite (18h - 21h)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Solicitação</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contato-info">
+                         <h3>Onde me encontrar</h3>
+                         <p>Atendimento presencial em um ambiente discreto e acolhedor, além de opção para terapia online.</p>
+                         <p><strong>Endereço:</strong><br>
+                            Av. Paulista, 1234, Sala 56<br>
+                            Bela Vista, São Paulo - SP<br>
+                            CEP: 01310-100
+                         </p>
+                         <p><strong>WhatsApp:</strong> (11) 98765-4321</p>
+                         <p><strong>E-mail:</strong> contato@drahelena.com.br</p>
+                         
+                         <div class="mapa-container">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.145695018636!2d-46.656534!3d-23.563099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c97c97!2sAv.%20Paulista%2C%201234%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1678886543210!5m2!1spt-BR!2sbr" 
+                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#hero" class="logo smooth-scroll">
+                        Dra. Helena Moreira
+                    </a>
+                    <p>Cuidando da sua saúde mental com profissionalismo e acolhimento.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">I</a>
+                        <a href="#" aria-label="LinkedIn">L</a>
+                        <a href="#" aria-label="Facebook">F</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#sobre" class="smooth-scroll">Sobre Mim</a></li>
+                        <li><a href="#especialidades" class="smooth-scroll">Especialidades</a></li>
+                        <li><a href="#depoimentos" class="smooth-scroll">Depoimentos</a></li>
+                        <li><a href="#faq" class="smooth-scroll">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li>(11) 98765-4321</li>
+                        <li>contato@drahelena.com.br</li>
+                        <li>Av. Paulista, 1234 - SP</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Receba dicas sobre saúde mental e bem-estar.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu melhor e-mail" required>
+                        <button type="submit">></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Dra. Helena Moreira. Todos os direitos reservados. CRP 00/12345</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Fechar">×</button>
+            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h3>Solicitação Enviada!</h3>
+            <p>Obrigada pelo seu contato. Entrarei em contato em breve para confirmar seu agendamento.</p>
+            <button class="btn btn-primary" id="modal-close-btn">Entendido</button>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const body = document.body;
+
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                body.classList.toggle('no-scroll');
+            });
+            
+            
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('no-scroll');
+                });
+            });
+
+            
+            document.querySelectorAll('a.smooth-scroll').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if(targetElement) {
+                        const headerOffset = 70; 
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const nextBtn = document.querySelector('.carousel-control.next');
+            const prevBtn = document.querySelector('.carousel-control.prev');
+            const dotsContainer = document.querySelector('.carousel-dots');
+            let currentSlide = 0;
+            let autoPlayInterval;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+                
+                document.querySelectorAll('.dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                let newIndex = (currentSlide + 1) % slides.length;
+                showSlide(newIndex);
+            }
+
+            function prevSlide() {
+                let newIndex = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(newIndex);
+            }
+            
+            
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.classList.add('dot');
+                dot.setAttribute('aria-label', `Ver depoimento ${i + 1}`);
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    showSlide(i);
+                    resetAutoPlay();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetAutoPlay();
+            });
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetAutoPlay();
+            });
+
+            
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(nextSlide, 7000); 
+            }
+            
+            function resetAutoPlay() {
+                clearInterval(autoPlayInterval);
+                startAutoPlay();
+            }
+
+            showSlide(0); 
+            startAutoPlay(); 
+
+            
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    if (isActive) {
+                        item.classList.remove('active');
+                        answer.style.maxHeight = 0;
+                    } else {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                });
+            });
+
+            
+            const form = document.getElementById('booking-form');
+            const modal = document.getElementById('booking-modal');
+            const modalClose = document.getElementById('modal-close');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (validateForm()) {
+                    
+                    modal.classList.add('active');
+                    body.classList.add('no-scroll'); 
+                }
+            });
+
+            function closeModal() {
+                modal.classList.remove('active');
+                body.classList.remove('no-scroll');
+                form.reset(); 
+                document.querySelectorAll('.form-group.error').forEach(group => {
+                    group.classList.remove('error');
+                });
+            }
+
+            modalClose.addEventListener('click', closeModal);
+            modalCloseBtn.addEventListener('click', closeModal);
+            
+            modal.addEventListener('click', (e) => {
+                if(e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            function validateForm() {
+                let isValid = true;
+                const name = document.getElementById('name');
+                const email = document.getElementById('email');
+                const phone = document.getElementById('phone');
+                
+                
+                if (name.value.trim() === '') {
+                    showError(name, 'Por favor, insira seu nome.');
+                    isValid = false;
+                } else {
+                    clearError(name);
+                }
+                
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email.value.trim())) {
+                    showError(email, 'Por favor, insira um e-mail válido.');
+                    isValid = false;
+                } else {
+                    clearError(email);
+                }
+                
+                
+                if (phone.value.trim().length < 8) {
+                    showError(phone, 'Por favor, insira um telefone válido.');
+                    isValid = false;
+                } else {
+                    clearError(phone);
+                }
+                
+                return isValid;
+            }
+
+            function showError(input, message) {
+                const formGroup = input.parentElement;
+                formGroup.classList.add('error');
+                formGroup.querySelector('.error-message').textContent = message;
+            }
+
+            function clearError(input) {
+                const formGroup = input.parentElement;
+                formGroup.classList.remove('error');
+            }
+            
+            
+            const statsSection = document.getElementById('estatisticas');
+            const statItems = document.querySelectorAll('.stat-item h4[data-count]');
+            let statsAnimated = false;
+
+            function animateCounter(element) {
+                const target = +element.getAttribute('data-count');
+                const duration = 2000; 
+                const stepTime = 20; 
+                const steps = duration / stepTime;
+                const increment = target / steps;
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        element.textContent = target.toLocaleString('pt-BR'); 
+                    } else {
+                        element.textContent = Math.ceil(current).toLocaleString('pt-BR');
+                    }
+                }, stepTime);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !statsAnimated) {
+                        statItems.forEach(animateCounter);
+                        statsAnimated = true; 
+                        observer.unobserve(statsSection); 
+                    }
+                });
+            }, {
+                threshold: 0.5 
+            });
+
+            observer.observe(statsSection);
+
+        });
+    </script>
+</body>
+</html>
+```
